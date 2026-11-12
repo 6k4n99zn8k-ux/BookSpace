@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>BookSpace - Registro de Biblioteca</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> BookSpace</h1>
+        <p>Un mundo de historias te espera</p>
+    </header>
+
+    <main class="contenedor">
+
+        <h2>Registro de nuevos lectores</h2>
+        <p>Completa el siguiente formulario para formar parte de nuestra biblioteca.</p>
+
+        <form id="formulario">
+
+            <h3>Datos personales</h3>
+
+            <label>Nombre completo:</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+
+            <label>Nombre de usuario:</label>
+            <input type="text" id="usuario" placeholder="Crea un usuario" required>
+
+            <label>Contraseña:</label>
+            <input type="password" id="password" placeholder="Crea una contraseña" required>
+
+            <label>Fecha de nacimiento:</label>
+            <input type="date" id="fecha" required>
+
+            <h3>Preferencias de lectura</h3>
+
+            <label>Género literario favorito:</label>
+            <select id="genero" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Novela">Novela</option>
+                <option value="Ciencia ficción">Ciencia ficción</option>
+                <option value="Fantasía">Fantasía</option>
+                <option value="Misterio">Misterio</option>
+                <option value="Historia">Historia</option>
+                <option value="Poesía">Poesía</option>
+            </select>
+
+            <label>Turno de atención:</label>
+
+            <div class="opciones">
+                <input type="radio" name="turno" value="Matutino" required>
+                <span>Matutino</span>
+
+                <input type="radio" name="turno" value="Vespertino">
+                <span>Vespertino</span>
+            </div>
+
+            <label>Servicios adicionales:</label>
+
+            <div class="opciones">
+                <input type="checkbox" id="notificaciones">
+                <span>Deseo recibir noticias y novedades de la biblioteca.</span>
+            </div>
+
+            <div class="opciones">
+                <input type="checkbox" id="terminos">
+                <span>Acepto los términos y condiciones.</span>
+            </div>
+
+            <label>Comentarios o recomendaciones:</label>
+            <textarea id="comentarios" rows="4"
+                placeholder="Escribe tus comentarios aquí..."></textarea>
+
+            <div class="botones">
+                <button type="submit" id="enviar" disabled>
+                    Registrar lector
+                </button>
+
+                <button type="reset" id="limpiar">
+                    Limpiar formulario
+                </button>
+            </div>
+
+        </form>
+
+        <div id="mensaje"></div>
+
+<!-- CREDENCIAL DIGITAL DEL LECTOR -->
+
+<div id="tarjeta" class="tarjeta" hidden>
+
+    <div class="tarjeta-encabezado">
+        <h2>📚 BOOKSPACE</h2>
+        <p>Credencial de lector</p>
+    </div>
+
+    <div class="tarjeta-contenido">
+
+        <h3 id="tarjetaNombre">Nombre del lector</h3>
+
+        <p><strong>Clave:</strong> <span id="tarjetaClave"></span></p>
+
+        <p><strong>Usuario:</strong> <span id="tarjetaUsuario"></span></p>
+
+        <p><strong>Género favorito:</strong> <span id="tarjetaGenero"></span></p>
+
+        <p><strong>Turno:</strong> <span id="tarjetaTurno"></span></p>
+
+        <p><strong>Fecha de registro:</strong> <span id="tarjetaFecha"></span></p>
+
+        <div class="qr-contenedor">
+            <div id="codigoQR"></div>
+            <p>Escanea para identificar tu credencial</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+    </main>
+
+    <footer>
+        <p>BookSpace © 2026 | Tu biblioteca, tu mundo.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
